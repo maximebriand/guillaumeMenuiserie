@@ -116,7 +116,7 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    	wp_register_script('materialize', get_template_directory_uri() . '/js/lib/materialize.js', array(), '4.3.0'); // Conditionizr
+    	wp_register_script('materialize', get_template_directory_uri() . '/js/lib/materialize.js', array('jquery'), '4.3.0'); // Conditionizr
         wp_enqueue_script('materialize'); // Enqueue it!
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts

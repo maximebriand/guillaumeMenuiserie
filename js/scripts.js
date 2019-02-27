@@ -1,11 +1,8 @@
-(function ($, root, undefined) {
-	
-	$(function () {
-		
-		'use strict';
-		
-		// DOM ready, take it away
-		
-	});
-	
-})(jQuery, this);
+(function($){
+    $(function(){
+
+        $('.sidenav').sidenav();
+        $('.parallax').parallax();
+
+    }); // end of document ready
+})(jQuery); // end of jQuery name space

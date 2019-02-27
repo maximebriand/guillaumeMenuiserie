@@ -25,23 +25,24 @@
 			<!-- header -->
 			<header class="header clear" role="banner">
 
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
-					<!-- /logo -->
 
 					<!-- nav -->
 					<nav class="white" role="navigation">
-						<?php
-                            html5blank_nav();
-                            html5blank_nav_mobile();
-						?>
-					</nav>
-					<!-- /nav -->
+                        <!-- logo -->
+                        <a id="logo-container" href="<?php echo home_url(); ?>" class="brand-logo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+                        </a>
+                        <!-- /logo -->
 
-			</header>
+                        <div class="nav-wrapper container">
+                            <?php
+                                html5blank_nav();
+                                html5blank_nav_mobile();
+                            ?>
+                            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        </div>
+					</nav>
+
+                <!-- /nav -->
+            </header>
 			<!-- /header -->
