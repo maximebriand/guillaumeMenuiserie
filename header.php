@@ -19,27 +19,27 @@
 
     <body <?php body_class(); ?>>
 
-		<!-- wrapper -->
-		<div class="wrapper">
-
 			<!-- header -->
 			<header class="header clear" role="banner">
 
 
 					<!-- nav -->
 					<nav class="white" role="navigation">
-                        <!-- logo -->
-                        <a id="logo-container" href="<?php echo home_url(); ?>" class="brand-logo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-                        </a>
-                        <!-- /logo -->
+                        <div class="wrapper">
+                            <!-- logo -->
+                            <a id="logo-container" href="<?php echo home_url(); ?>" class="brand-logo">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/logo_guillaume_menuiserie.png" alt="Logo" class="logo-img">
+                                <?php bloginfo('title'); ?>
+                            </a>
+                            <!-- /logo -->
 
-                        <div class="nav-wrapper container">
-                            <?php
-                                html5blank_nav();
-                                html5blank_nav_mobile();
-                            ?>
-                            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                            <div class="nav-wrapper container">
+                                <?php
+                                    html5blank_nav();
+                                    html5blank_nav_mobile();
+                                ?>
+                                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                            </div>
                         </div>
 					</nav>
 

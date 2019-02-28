@@ -20,14 +20,8 @@
 	font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
 }
-/* html element 62.5% font-size for REM use */
-html {
-	font-size:62.5%;
-}
-body {
-	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color:#444;
-}
+
+
 /* clear */
 .clear:before,
 .clear:after {
@@ -49,9 +43,7 @@ a {
 	color:#444;
 	text-decoration:none;
 }
-a:hover {
-	color:#444;
-}
+
 a:focus {
 	outline:0;
 }
@@ -84,7 +76,7 @@ input:focus {
 
 }
 .logo-img {
-
+	height: 55px;
 }
 /* nav */
 .nav {
@@ -159,7 +151,7 @@ footer.page-footer {
 \*------------------------------------*/
 
 
-
+h5.header {text-shadow: #8b1014a1 2px 2px;}
 /*------------------------------------*\
 	TYPOGRAPHY
 \*------------------------------------*/
@@ -174,6 +166,7 @@ footer.page-footer {
     font-weight:normal;
     font-style:normal;
 }
+
 
 /*------------------------------------*\
     RESPONSIVE
