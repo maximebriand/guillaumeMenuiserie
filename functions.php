@@ -70,12 +70,12 @@ function html5blank_nav()
 		'theme_location'  => 'header-menu',
 		'menu'            => '',
 		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
+		'container_class' => '',
 		'container_id'    => '',
-		'menu_class'      => 'menu right hide-on-med-and-down',
+		'menu_class'      => 'navbar-nav pl-md-5 ml-auto',
 		'menu_id'         => '',
 		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
+		'fallback_cb'     => 'wp_page_menu nav-item',
 		'before'          => '',
 		'after'           => '',
 		'link_before'     => '',
@@ -85,6 +85,15 @@ function html5blank_nav()
 		'walker'          => ''
 		)
 	);
+}
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
 }
 
 function html5blank_nav_mobile()
@@ -116,11 +125,15 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    	wp_register_script('materialize', get_template_directory_uri() . '/js/lib/materialize.js', array('jquery'), '4.3.0'); // Conditionizr
-        wp_enqueue_script('materialize'); // Enqueue it!
-
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
+        wp_enqueue_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry-docs.min.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('fancybox', get_template_directory_uri() . '/js/jquery.fancybox.min.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('stellar', get_template_directory_uri() . '/js/jquery.stellar.min.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('carroussel', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.0.0'); 
+        wp_enqueue_script('themeMain', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0'); 
     }
 }
 
@@ -136,11 +149,20 @@ function html5blank_conditional_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('materialize', get_template_directory_uri() . '/materialize.css', array(), '1.0', 'all');
-    wp_enqueue_style('materialize'); // Enqueue it!
-
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
+    
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/_bootstrap.css', array(), '1.0', 'all');
+    wp_enqueue_style('masonry', get_template_directory_uri() . '/css/masonry-docs.css', array(), '1.0', 'all');
+    wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrap-grid', get_template_directory_uri() . '/css/bootstrap-grid.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrap-reboot', get_template_directory_uri() . '/css/bootstrap-reboot.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrap2', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrapMap', get_template_directory_uri() . '/css/bootstrap.css.map', array(), '1.0', 'all');
+    wp_enqueue_style('flexslider', get_template_directory_uri() . '/css/flexslider.css', array(), '1.0', 'all');
+    wp_enqueue_style('fancybox', get_template_directory_uri() . '/css/jquery.fancybox.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('carousel', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+    
+    wp_enqueue_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
 }
 
 // Register HTML5 Blank Navigation
