@@ -25,6 +25,7 @@ get_header(); ?>
                 <h2 class="mb-4 section-title"><?php single_post_title(); ?></h2>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <?php $services = get_field('services'); ?>
+                        <!-- service is define in the loop. Because if we call it outside it's returnig null -->
 
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

@@ -8,13 +8,16 @@ jQuery(document).ready(function($) {
         }
         // bootstrap dropdown hover
     const masonry = $('#masonry');
-    if (masonry) {
+    if (masonry.length) {
         masonry.masonry({
             itemSelector: '.grid-item',
             isFitWidth: true,
             gutter: 50
         });
     }
+
+
+
     // loader
     const loader = function() {
         $('#loader').removeClass('show');

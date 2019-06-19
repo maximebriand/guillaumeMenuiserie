@@ -6,7 +6,7 @@
 
 
 		<div class="inner-page">
-			<div class="slider-item overlay" style="background-image: url('images/hero_2.jpg');" data-stellar-background-ratio="0.5">
+			<div class="slider-item overlay" style="background-image: url('<?=get_template_directory_uri() ;?>/images/menuisier.jpg');" data-stellar-background-ratio="0.5">
 				<div class="container">
 					<div class="row slider-text align-items-center justify-content-center">
 						<div class="col-lg-9 text-center col-sm-12 element-animate">
@@ -48,7 +48,5 @@
 	</section>
 	<!-- /section -->
 </main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

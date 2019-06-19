@@ -416,3 +416,7 @@ a img.aligncenter {
     background: none;
     border: none;
 }
+
+.site-footer {
+    margin: 0;
+}
